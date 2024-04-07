@@ -11,7 +11,8 @@ app.use(express.json());
 app.use(
   cors({
     origin: "http://localhost:3000", // Izinkan origin dari frontend di localhost:3000
-    credentials: true, // Izinkan pengiriman cookie lintas domain
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"], // Izinkan pengiriman cookie lintas domain
   })
 );
 

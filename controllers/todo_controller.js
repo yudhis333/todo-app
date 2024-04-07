@@ -137,10 +137,6 @@ class TodosController {
     const { user_id, id } = req.params;
 
     try {
-      const user = await todos.findByPk(user_id);
-      if (!user) {
-        return res.status(404).json({ message: "User not found" });
-      }
 
       const todo = await todos.findOne({ where: { user_id, id } });
       if (!todo) {
